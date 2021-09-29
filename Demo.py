@@ -10,7 +10,7 @@ import shutil
 import matplotlib.ticker as ticker
 import torch.nn as nn
 
-data_path = 'E:\\Distillation_ResNet/'
+data_path = 'D:\\Distillation_ResNet/'
 batch_size=100
 kwargs = {'num_workers': 0, 'pin_memory': True} 
 
@@ -112,7 +112,7 @@ exp_dir='exp_dir/' + exp_dirname + '/cifar_NET_normalize'+dlabel
 num_epochs=150
 
 fine_tune_SGD(dataset_path=dataset_path, num_epochs=num_epochs,
-    exp_dir=exp_dir,model_path=model_path,lr=1e-3,batch_size=64, class_num=len(digits))
+    exp_dir=exp_dir,model_path=model_path,lr=1e-3,batch_size=128, class_num=len(digits))
 #model_path=os.path.join(exp_dir,'best_model.pth.tar')
 #exit()
 
@@ -163,7 +163,7 @@ for digits in class_split[1:]:
     #if digits[0] >10:
     model_ft, task_acc, mean_acc = Big_Separate(dataset_path=dataset_path, previous_pathes=previous_pathes, 
                 previous_task_model_path=model_path, exp_dir=exp_dir, data_dirs=data_dirs, 
-                reg_sets=reg_sets, reg_lambda=reg_lambda, batch_size=64, num_epochs=num_epochs, lr=1e-3,norm='L2', 
+                reg_sets=reg_sets, reg_lambda=reg_lambda, batch_size=128, num_epochs=num_epochs, lr=1e-3,norm='L2', 
                 b1=False, class_num = class_num, task = task, digits = digits, base_class_size=base_class_size, inc_class_size=inc_class_size)
    
     # 紀錄每個task之後的mean_acc
