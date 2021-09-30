@@ -10,7 +10,7 @@ import shutil
 import matplotlib.ticker as ticker
 import torch.nn as nn
 
-data_path = 'D:\\Distillation_ResNet/'
+data_path = 'D:\\Distillation_ResNet_v2/'
 batch_size=100
 kwargs = {'num_workers': 0, 'pin_memory': True} 
 
